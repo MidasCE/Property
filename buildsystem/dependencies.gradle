@@ -44,8 +44,6 @@ ext {
     glide_version = '4.11.0'
 
     mainApplication = [
-            parcelerApi             : "org.parceler:parceler-api:$parceler_version",
-            parceler                : "org.parceler:parceler:$parceler_version",
             kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             appCompat               : "androidx.appcompat:appcompat:$appCompat_version",
             core                    : "androidx.core:core-ktx:$androidXCore",

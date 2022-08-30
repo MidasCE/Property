@@ -10,9 +10,15 @@ import com.example.property.databinding.HighlightPropertyItemBinding
 import com.example.property.databinding.PropertyItemBinding
 import com.example.property.main.property.viewentity.PropertyItemEntity
 
-class PropertyItemAdapter(private val itemInteractionListener: ItemInteractionListener) :
+class PropertyItemAdapter() :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var context: Context
+
+    private var itemInteractionListener: ItemInteractionListener? = null
+
+    fun setOnItemClickListener(listener: ItemInteractionListener) {
+        itemInteractionListener = listener
+    }
 
     private var itemList: MutableList<PropertyItemEntity> = mutableListOf()
 
@@ -76,7 +82,7 @@ class PropertyItemAdapter(private val itemInteractionListener: ItemInteractionLi
             }
         }
         holder.itemView.setOnClickListener {
-            itemInteractionListener.onItemClick(itemList[position])
+            itemInteractionListener?.onItemClick(itemList[position])
         }
     }
 

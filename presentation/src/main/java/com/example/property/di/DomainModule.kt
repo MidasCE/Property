@@ -2,11 +2,11 @@ package com.example.app.di
 
 import com.example.domain.interactor.ItemInteractor
 import com.example.domain.interactor.ItemInteractorImpl
+import com.example.domain.repository.ItemRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import repository.comic.ComicRepository
 import javax.inject.Singleton
 
 @Module
@@ -15,6 +15,6 @@ class DomainModule {
 
     @Provides
     @Singleton
-    fun provideComicInteractor(repository: ComicRepository): ItemInteractor =
+    fun provideItemInteractor(repository: ItemRepository): ItemInteractor =
         ItemInteractorImpl(repository)
 }

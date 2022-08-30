@@ -1,6 +1,8 @@
 package com.example.property.di
 
 import com.example.data.api.ItemAPI
+import com.example.data.repository.ItemRepositoryImpl
+import com.example.domain.repository.ItemRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -41,5 +43,11 @@ class DataModule {
     @Singleton
     fun provideGson(): Gson = GsonBuilder()
         .create()
+
+    @Provides
+    @Singleton
+    fun provideItemRepository(api: ItemAPI): ItemRepository =
+        ItemRepositoryImpl(api)
+
 
 }

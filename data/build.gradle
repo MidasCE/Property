@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
@@ -35,6 +35,7 @@ dependencies {
     def applicationDependencies = rootProject.ext.mainApplication
     def unitTestDependencies = rootProject.ext.unitTesting
 
+    implementation project(':domain')
     implementation applicationDependencies.appCompat
     implementation applicationDependencies.core
     implementation applicationDependencies.hilt

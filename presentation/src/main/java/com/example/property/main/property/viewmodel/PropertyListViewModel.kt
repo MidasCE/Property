@@ -8,6 +8,7 @@ import com.example.domain.interactor.ItemInteractor
 import com.example.property.core.Event
 import com.example.property.core.SchedulerFactory
 import com.example.property.main.property.viewentity.PropertyItemEntity
+import com.example.property.main.property.viewentity.toViewEntity
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class PropertyListViewModel(
@@ -19,12 +20,8 @@ class PropertyListViewModel(
 
     val loadingLiveData = MutableLiveData<Boolean>()
     val propertyItemLiveData = MutableLiveData<List<PropertyItemEntity>>()
-    val comicTitleLiveData = MutableLiveData<String>()
-    val comicDescriptionLiveData = MutableLiveData<String>()
     val errorLiveData = MutableLiveData<String>()
 
-    private var latestComicId: Int = 2641
-    private var mainComicId: Int = 1
     private var compositeDisposable = CompositeDisposable()
 
     private fun handleError(throwable: Throwable) {
@@ -37,9 +34,11 @@ class PropertyListViewModel(
         val disposable = itemInteractor.getPropertyList()
             .subscribeOn(schedulerFactory.io())
             .observeOn(schedulerFactory.main())
-            .subscribe({ item ->
+            .subscribe({ propertyList ->
                 loadingLiveData.value = false
-
+                propertyItemLiveData.value = propertyList.map { property ->
+                    property.toViewEntity()
+                }
             }, {
                 loadingLiveData.value = false
                 handleError(it)

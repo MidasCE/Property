@@ -8,15 +8,6 @@
     android:orientation="horizontal"
     android:paddingBottom="16dp"
     android:gravity="center_vertical">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_launcher_background" />
-
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
@@ -24,53 +15,42 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:textColor="@color/colorBlackPrimary"
-        android:textSize="22sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        tools:text="Boba Fett" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Area" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:src="@drawable/ic_launcher_background" />
 
     <TextView
-        android:id="@+id/askingPriceTextView"
+        android:id="@+id/priceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBluePrimary"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/titleTextView"
-        tools:text="Price" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="@string/price" />
 
     <TextView
-        android:id="@+id/areaTextView"
+        android:id="@+id/ratingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorGreyPrimary"
-        android:layout_marginTop="4dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/titleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        tools:text="Area : " />
-
-    <TextView
-        android:id="@+id/numberOfRoomsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorGreyPrimary"
-        android:layout_marginTop="4dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/areaTextView"
-        app:layout_constraintTop_toBottomOf="@+id/areaTextView"
-        tools:text="Rooms : " />
-
-    <TextView
-        android:id="@+id/streetAddressTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorGreyPrimary"
-        android:layout_marginTop="4dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/numberOfRoomsTextView"
-        app:layout_constraintTop_toBottomOf="@+id/numberOfRoomsTextView"
-        tools:text="streetAddress" />
+        android:textColor="@color/colorBlackPrimary"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceTextView"
+        tools:text="@string/rating" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

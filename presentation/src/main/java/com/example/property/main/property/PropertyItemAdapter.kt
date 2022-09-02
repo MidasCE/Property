@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.property.R
 import com.example.property.databinding.AreaItemBinding
 import com.example.property.databinding.HighlightPropertyItemBinding
 import com.example.property.databinding.PropertyItemBinding
 import com.example.property.main.property.viewentity.PropertyItemEntity
 
-class PropertyItemAdapter() :
+class PropertyItemAdapter :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var context: Context
 
@@ -101,7 +102,13 @@ class PropertyItemAdapter() :
 
     inner class AreaViewHolder(private val itemBinding: AreaItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(viewEntity: PropertyItemEntity.AreaEntity) {
-            Glide.with(context).load(viewEntity.imageUrl).into(itemBinding.imageView)
+            Glide.with(context)
+                .load(viewEntity.imageUrl)
+                .centerCrop()
+                .into(itemBinding.imageView)
+            itemBinding.titleTextView.text = viewEntity.area
+            itemBinding.priceTextView.text = context.getString(R.string.price) + viewEntity.averagePrice
+            itemBinding.ratingTextView.text = context.getString(R.string.rating) + viewEntity.rating
         }
     }
 

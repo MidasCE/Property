@@ -27,6 +27,7 @@ sealed class Item(
         override val area: String,
         override val image: String,
         val averagePrice: String,
+        val rating: String,
     ) : Item(type, id, area, image)
 
     data class HighlightedPropertyItem(

@@ -14,6 +14,7 @@ data class ItemData(
     @SerializedName("municipality") val municipality: String?,
     @SerializedName("area") val area: String,
     @SerializedName("averagePrice") val averagePrice: String?,
+    @SerializedName("rating") val rating: String?,
     @SerializedName("daysOnHemnet") val daysOnHemnet: Int?,
     @SerializedName("livingArea") val livingArea: Int?,
     @SerializedName("numberOfRooms") val numberOfRooms: Int?,

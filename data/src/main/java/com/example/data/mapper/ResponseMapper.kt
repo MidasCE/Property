@@ -6,7 +6,7 @@ import com.example.domain.model.Item
 fun ItemData.toDomain(): Item? {
     when (type) {
         "Area" -> {
-            return Item.AreaItem(type, id, area, image, averagePrice ?: return null)
+            return Item.AreaItem(type, id, area, image, averagePrice ?: return null, rating ?: return null)
         }
         "HighlightedProperty" -> {
             return Item.HighlightedPropertyItem(

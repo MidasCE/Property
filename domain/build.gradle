@@ -24,4 +24,5 @@ dependencies {
     testImplementation unitTestDependencies.kotlinTest
     testImplementation unitTestDependencies.junit
     testImplementation unitTestDependencies.mockito
+    testImplementation unitTestDependencies.mockitoKotlin
 }

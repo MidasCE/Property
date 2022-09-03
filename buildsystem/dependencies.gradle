@@ -33,7 +33,8 @@ ext {
 
     //Unit Testing
     junit_version = '4.13.2'
-    mockito_version = '2.22.0'
+    mockito_version = '4.7.0'
+    mockito_kotlin_version = '4.0.0'
     kluent_version = '1.14'
     core_testing_version = '1.1.1'
 
@@ -49,10 +50,6 @@ ext {
             core                    : "androidx.core:core-ktx:$androidXCore",
             constraintLayout        : "androidx.constraintlayout:constraintlayout:$constraintLayout_version",
             recyclerview            : "androidx.recyclerview:recyclerview:$recyclerview_version",
-            daggerCompiler          : "com.google.dagger:dagger-compiler:$dagger_version",
-            dagger                  : "com.google.dagger:dagger:$dagger_version",
-            daggerSupport           : "com.google.dagger:dagger-android-support:$dagger_version",
-            daggerProcessor         : "com.google.dagger:dagger-android-processor:$dagger_version",
             hilt                    : "com.google.dagger:hilt-android:$hilt_version",
             hilt_compiler           : "com.google.dagger:hilt-android-compiler:$hilt_version",
             javaxAnnotation         : "javax.annotation:jsr250-api:$javaxAnnotations_version",
@@ -63,7 +60,6 @@ ext {
             rxKotlin                : "io.reactivex.rxjava3:rxkotlin:$rx_kotlin_version",
             kotlinCoroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines",
             okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
-            material                : "com.google.android.material:material:$material_version",
             googlemaps              : "com.google.android.gms:play-services-maps:$gmap_version",
             googlemapsutils         : "com.google.maps.android:android-maps-utils:$gmap_utils_version",
             gson                    : "com.google.code.gson:gson:$gson_version",
@@ -74,12 +70,13 @@ ext {
     ]
 
     unitTesting = [
-            coreTesting: "android.arch.core:core-testing:$core_testing_version",
-            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
-            kotlinTest : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
-            junit      : "junit:junit:$junit_version",
-            mockito    : "org.mockito:mockito-core:$mockito_version",
-            kluent     : "org.amshove.kluent:kluent:$kluent_version",
+            coreTesting         : "android.arch.core:core-testing:$core_testing_version",
+            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            kotlinTest          : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
+            junit               : "junit:junit:$junit_version",
+            mockito             : "org.mockito:mockito-core:$mockito_version",
+            mockitoKotlin       : "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version",
+            kluent              : "org.amshove.kluent:kluent:$kluent_version",
     ]
 
     acceptanceTesting = [

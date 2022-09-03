@@ -21,7 +21,6 @@ class PropertyListViewModel(
     private var compositeDisposable = CompositeDisposable()
 
     private fun handleError(throwable: Throwable) {
-        Log.println(Log.ERROR, "error", throwable.toString())
         errorLiveData.postValue(throwable.toString())
     }
 

@@ -49,7 +49,6 @@ dependencies {
     def unitTestDependencies = rootProject.ext.unitTesting
     def acceptanceTestDependencies = rootProject.ext.acceptanceTesting
 
-    kapt applicationDependencies.daggerCompiler
     compileOnly applicationDependencies.javaxAnnotation
     compileOnly applicationDependencies.javaxInject
 
@@ -63,7 +62,6 @@ dependencies {
     implementation applicationDependencies.recyclerview
     implementation applicationDependencies.hilt
     kapt applicationDependencies.hilt_compiler
-    implementation applicationDependencies.material
     implementation applicationDependencies.rxAndroid
     implementation applicationDependencies.rxKotlin
     implementation applicationDependencies.retrofit
@@ -77,6 +75,7 @@ dependencies {
     testImplementation unitTestDependencies.kotlinTest
     testImplementation unitTestDependencies.junit
     testImplementation unitTestDependencies.mockito
+    testImplementation unitTestDependencies.mockitoKotlin
 
     testImplementation unitTestDependencies.kluent
     androidTestImplementation acceptanceTestDependencies.testCore

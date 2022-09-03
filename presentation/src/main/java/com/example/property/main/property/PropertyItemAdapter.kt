@@ -120,7 +120,13 @@ class PropertyItemAdapter :
 
     inner class HighlightedPropertyViewHolder(private val itemBinding: HighlightPropertyItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(viewEntity: PropertyItemEntity.HighlightedPropertyEntity) {
-            Glide.with(context).load(viewEntity.imageUrl).into(itemBinding.imageView)
+            Glide.with(context)
+                .load(viewEntity.imageUrl)
+                .into(itemBinding.imageView)
+            itemBinding.titleTextView.text = viewEntity.streetAddress
+            itemBinding.areaTextView.text = viewEntity.area + ", " + viewEntity.municipality
+            itemBinding.monthlyFeeTextView.text = viewEntity.monthlyFee
+            itemBinding.averagePriceTextView.text = viewEntity.askingPrice
         }
     }
 

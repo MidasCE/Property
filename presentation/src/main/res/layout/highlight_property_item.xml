@@ -9,12 +9,25 @@
     android:paddingBottom="16dp"
     android:gravity="center_vertical">
 
+    <TextView
+        android:id="@+id/highlightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorGoldPrimary"
+        android:textSize="30sp"
+        android:text="Highlight Today!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highlightTextView"
         tools:src="@drawable/ic_launcher_background" />
 
     <TextView
@@ -30,7 +43,7 @@
         tools:text="Boba Fett" />
 
     <TextView
-        android:id="@+id/askingPriceTextView"
+        android:id="@+id/averagePriceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBluePrimary"
@@ -52,7 +65,7 @@
         tools:text="Area : " />
 
     <TextView
-        android:id="@+id/numberOfRoomsTextView"
+        android:id="@+id/monthlyFeeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorGreyPrimary"
@@ -60,17 +73,6 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/areaTextView"
         app:layout_constraintTop_toBottomOf="@+id/areaTextView"
-        tools:text="Rooms : " />
-
-    <TextView
-        android:id="@+id/streetAddressTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorGreyPrimary"
-        android:layout_marginTop="4dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/numberOfRoomsTextView"
-        app:layout_constraintTop_toBottomOf="@+id/numberOfRoomsTextView"
-        tools:text="streetAddress" />
+        tools:text="Monthly Fee" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

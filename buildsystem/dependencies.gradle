@@ -27,9 +27,7 @@ ext {
     retrofit_version_rx_java_version = '2.9.0'
     rx_kotlin_version = '3.0.0'
     parceler_version = '1.1.12'
-    gmap_version = '17.0.0'
     gson_version = '2.8.6'
-    gmap_utils_version = '1.2.1'
 
     //Unit Testing
     junit_version = '4.13.2'
@@ -60,8 +58,6 @@ ext {
             rxKotlin                : "io.reactivex.rxjava3:rxkotlin:$rx_kotlin_version",
             kotlinCoroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines",
             okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
-            googlemaps              : "com.google.android.gms:play-services-maps:$gmap_version",
-            googlemapsutils         : "com.google.maps.android:android-maps-utils:$gmap_utils_version",
             gson                    : "com.google.code.gson:gson:$gson_version",
             glide                   : "com.github.bumptech.glide:glide:$glide_version",
             glideProcessor          : "com.github.bumptech.glide:compiler:$glide_version",

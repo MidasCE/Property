@@ -55,8 +55,6 @@ dependencies {
     implementation project(':data')
     implementation project(':domain')
     implementation applicationDependencies.appCompat
-    implementation applicationDependencies.googlemaps
-    implementation applicationDependencies.googlemapsutils
     implementation applicationDependencies.core
     implementation applicationDependencies.constraintLayout
     implementation applicationDependencies.recyclerview

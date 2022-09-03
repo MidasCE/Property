@@ -96,7 +96,13 @@ class PropertyItemAdapter :
 
     inner class PropertyViewHolder(private val itemBinding: PropertyItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(viewEntity: PropertyItemEntity.PropertyEntity) {
-            Glide.with(context).load(viewEntity.imageUrl).into(itemBinding.imageView)
+            Glide.with(context)
+                .load(viewEntity.imageUrl)
+                .into(itemBinding.imageView)
+            itemBinding.titleTextView.text = viewEntity.streetAddress
+            itemBinding.areaTextView.text = viewEntity.area + ", " + viewEntity.municipality
+            itemBinding.monthlyFeeTextView.text = viewEntity.monthlyFee
+            itemBinding.averagePriceTextView.text = viewEntity.askingPrice
         }
     }
 

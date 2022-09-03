@@ -30,7 +30,7 @@
         tools:text="Boba Fett" />
 
     <TextView
-        android:id="@+id/askingPriceTextView"
+        android:id="@+id/averagePriceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBluePrimary"
@@ -52,7 +52,7 @@
         tools:text="Area : " />
 
     <TextView
-        android:id="@+id/numberOfRoomsTextView"
+        android:id="@+id/monthlyFeeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorGreyPrimary"
@@ -60,17 +60,6 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/areaTextView"
         app:layout_constraintTop_toBottomOf="@+id/areaTextView"
-        tools:text="Rooms : " />
-
-    <TextView
-        android:id="@+id/streetAddressTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorGreyPrimary"
-        android:layout_marginTop="4dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/numberOfRoomsTextView"
-        app:layout_constraintTop_toBottomOf="@+id/numberOfRoomsTextView"
-        tools:text="streetAddress" />
+        tools:text="Monthly Fee" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

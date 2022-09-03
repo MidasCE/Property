@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Property</string>
-    <string name="price">Price : </string>
-    <string name="rating">Rating : </string>
+    <string name="price">Price :\u0020</string>
+    <string name="rating">Rating :\u0020</string>
 </resources>

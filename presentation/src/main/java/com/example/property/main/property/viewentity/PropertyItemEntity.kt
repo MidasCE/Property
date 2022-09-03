@@ -12,7 +12,15 @@ sealed class PropertyItemEntity(
     @Parcelize
     data class PropertyEntity(
         override val id: String,
-        override val imageUrl: String
+        override val imageUrl: String,
+        val askingPrice: String,
+        val monthlyFee: String,
+        val municipality: String,
+        val area: String,
+        val daysOnHemnet: Int,
+        val livingArea: Int,
+        val numberOfRooms: Int,
+        val streetAddress: String
     ) : PropertyItemEntity(id, imageUrl), Parcelable
 
     @Parcelize
@@ -27,7 +35,15 @@ sealed class PropertyItemEntity(
     @Parcelize
     data class HighlightedPropertyEntity(
         override val id: String,
-        override val imageUrl: String
+        override val imageUrl: String,
+        val askingPrice: String,
+        val monthlyFee: String,
+        val municipality: String,
+        val area: String,
+        val daysOnHemnet: Int,
+        val livingArea: Int,
+        val numberOfRooms: Int,
+        val streetAddress: String
     ) : PropertyItemEntity(id, imageUrl), Parcelable
 
 }
@@ -35,7 +51,16 @@ sealed class PropertyItemEntity(
 fun Item.toViewEntity(): PropertyItemEntity {
     return when(this) {
         is Item.PropertyItem -> {
-            PropertyItemEntity.PropertyEntity(id, image)
+            PropertyItemEntity.PropertyEntity(id,
+                image,
+                askingPrice,
+                monthlyFee,
+                municipality,
+                area,
+                daysOnHemnet,
+                livingArea,
+                numberOfRooms,
+                streetAddress)
         }
         is Item.AreaItem -> {
             PropertyItemEntity.AreaEntity(id,
@@ -45,7 +70,16 @@ fun Item.toViewEntity(): PropertyItemEntity {
                 rating)
         }
         is Item.HighlightedPropertyItem -> {
-            PropertyItemEntity.HighlightedPropertyEntity(id, image)
+            PropertyItemEntity.HighlightedPropertyEntity(id,
+                image,
+                askingPrice,
+                monthlyFee,
+                municipality,
+                area,
+                daysOnHemnet,
+                livingArea,
+                numberOfRooms,
+                streetAddress)
         }
     }
 }

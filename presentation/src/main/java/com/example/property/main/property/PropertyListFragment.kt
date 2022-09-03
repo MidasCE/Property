@@ -1,6 +1,7 @@
 package com.example.property.main.property
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.property.core.SchedulerFactory
 import com.example.property.databinding.FragmentPropertyListBinding
 import com.example.property.main.property.viewentity.PropertyItemEntity
 import com.example.property.main.property.viewmodel.PropertyListViewModel
+import com.example.property.main.propertydetails.PropertyDetailsActivity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -104,5 +106,7 @@ class PropertyListFragment : Fragment(), PropertyItemAdapter.ItemInteractionList
     }
 
     override fun onItemClick(propertyItemEntity: PropertyItemEntity) {
+        val i = Intent(context, PropertyDetailsActivity::class.java)
+        startActivity(i)
     }
 }

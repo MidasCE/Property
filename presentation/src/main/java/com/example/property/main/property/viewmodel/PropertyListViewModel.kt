@@ -1,11 +1,9 @@
 package com.example.property.main.property.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.domain.interactor.ItemInteractor
-import com.example.property.core.Event
 import com.example.property.core.SchedulerFactory
 import com.example.property.main.property.viewentity.PropertyItemEntity
 import com.example.property.main.property.viewentity.toViewEntity
@@ -15,8 +13,6 @@ class PropertyListViewModel(
     private val schedulerFactory: SchedulerFactory,
     private val itemInteractor: ItemInteractor,
 ) : ViewModel() {
-    private val _openDetailsEvent = MutableLiveData<Event<String>>()
-    val openDetailsEvent: LiveData<Event<String>> = _openDetailsEvent
 
     val loadingLiveData = MutableLiveData<Boolean>()
     val propertyItemLiveData = MutableLiveData<List<PropertyItemEntity>>()
